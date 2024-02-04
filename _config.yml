@@ -6,16 +6,16 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: puzzlehunt.net
+title: checker.jeffturnham.dev
 description: > # this means to ignore newlines until "baseurl:"
-  All things puzzlehunts
+  Puzzle answer check service
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.puzzlehunt.net" # the base hostname & protocol for your site
+url: "https://www.checker.jeffturnham.dev" # the base hostname & protocol for your site
 
 permalink: /:title
 
 # Build settings
 markdown: kramdown
 
-twitter_username: betaveros
-github_username: betaveros
+twitter_username: JeffTurnham
+github_username: turnham
