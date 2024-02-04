@@ -6,9 +6,7 @@ This is based on the [betaveros checker](https://github.com/betaveros/puzzlehunt
 
 * Provide additional "keep going" responses for answwers that are close or steps along the way to the solution
 
-----
-
-Original overview from betaveros:
+## Original overview from betaveros:
 
 ### What is this?
 
