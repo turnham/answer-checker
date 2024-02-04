@@ -6,21 +6,21 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f7f7f7;
+    background-color: #121212; /* Dark background */
 }
 
 .container {
     width: 80%;
     max-width: 600px;
-    background: white;
+    background: #1e1e1e; /* Slightly lighter dark shade for the container */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 h2 {
     margin-bottom: 20px;
-    color: #333;
+    color: #ffffff; /* White color for headings */
 }
 
 .inputPair input, #generatedURL {
@@ -28,7 +28,9 @@ h2 {
     padding: 10px;
     margin: 5px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #333333; /* Dark border for inputs */
+    background-color: #262626; /* Dark input fields */
+    color: #ffffff; /* White text */
 }
 
 #addPair, #generateURL, #copyURL {
@@ -38,21 +40,24 @@ h2 {
     margin-top: 10px;
     cursor: pointer;
     font-weight: bold;
+    color: #ffffff; /* White text for buttons */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effects */
 }
 
 #addPair {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #4CAF50; /* Green background */
 }
 
 #generateURL {
-    background-color: #2196F3;
-    color: white;
+    background-color: #2196F3; /* Blue background */
 }
 
 #copyURL {
-    background-color: #f44336;
-    color: white;
+    background-color: #f44336; /* Red background */
+}
+
+#addPair:hover, #generateURL:hover, #copyURL:hover {
+    opacity: 0.8; /* Slight opacity change on hover for better interaction feedback */
 }
 
 .url-display {
