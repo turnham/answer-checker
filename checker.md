@@ -91,7 +91,7 @@ function generateHash(label, answer, solution, callback) {
 		ciphertextPromise = new Promise(resolve => resolve(null));
 	} else {
 		// "-encrypt" for domain separation
-		const encryptionSalt = encoder.encode("puzzlehunt.net/checker#" + version + '-encrypt#' + salt + '#' + label);
+		const encryptionSalt = encoder.encode("checker.jeffturnham.dev/#" + version + '-encrypt#' + salt + '#' + label);
 		let encodedSolution = encoder.encode(solution);
 		// very lazy xor cipher
 		ciphertextPromise = scrypt.scrypt(encoder.encode(answer), encryptionSalt, 4096, 8, 1, encodedSolution.length, function (progress) {
@@ -107,7 +107,7 @@ function generateHash(label, answer, solution, callback) {
 		const encodedCiphertext = ciphertext ? b64OfArray(ciphertext) : null;
 		// Note: add the label even if it's empty. Also assume the label is ASCII
 		// (by being v0 URI-encoded or v1 base64ed) already.
-		const fullSalt = encoder.encode("puzzlehunt.net/checker#" + version + '#' + salt + '#' + label
+		const fullSalt = encoder.encode("checker.jeffturnham.dev/#" + version + '#' + salt + '#' + label
 			+ (encodedCiphertext ? "#" + encodedCiphertext : ""));
 		// N = 4096 = 2^12 = memory cost factor (a normal lower bound,
 		// e.g. libsodium's crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_MIN, is
@@ -143,7 +143,7 @@ function checkHash(version, label, salt, hash, answer, ciphertext, callback) {
 	// The caller should canonicalize the answer!
 	// Note: add the label even if it's empty. Also assume the label is ASCII
 	// (by being v0 URI-encoded or v1 base64ed) already.
-	const fullSalt = encoder.encode("puzzlehunt.net/checker#" + version + '#' + salt + '#' + label
+	const fullSalt = encoder.encode("checker.jeffturnham.dev/#" + version + '#' + salt + '#' + label
 		+ (ciphertext ? "#" + ciphertext : ""));
 	scrypt.scrypt(encoder.encode(answer), fullSalt, 4096, 8, 1, 24, function (progress) {
 		callback({ 'progress': progress });
@@ -152,7 +152,7 @@ function checkHash(version, label, salt, hash, answer, ciphertext, callback) {
 			if (ciphertext === "") {
 				callback({ 'correct': true });
 			} else {
-				const encryptionSalt = encoder.encode("puzzlehunt.net/checker#" + version + '-encrypt#' + salt + '#' + label);
+				const encryptionSalt = encoder.encode("checker.jeffturnham.dev/#" + version + '-encrypt#' + salt + '#' + label);
 				const encodedSolution = unb64(ciphertext);
 				scrypt.scrypt(encoder.encode(answer), encryptionSalt, 4096, 8, 1, encodedSolution.length, function (progress) {
 					callback({ 'correct': true, 'progress': progress });
