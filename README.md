@@ -1,8 +1,8 @@
 # Puzzle Answer Checker
 
-This is based on the [betaveros checker](https://github.com/betaveros/puzzlehunt.net/blob/master/checker.md)
+This is based on the [betaveros checker](https://github.com/betaveros/puzzlehunt.net/blob/master/checker.md) hosted at [puzzlehunt.com/checker](https://www.puzzlehunt.net/checker)
 
-## Additional Features
+## Added Features
 
 * Provide additional "keep going" responses for answwers that are close or steps along the way to the solution
 
