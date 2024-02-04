@@ -1,7 +1,7 @@
 ---
 layout: page
 short_title: Checker
-title: Client-Side Answer Checker
+title: Puzzle Answer Checker
 ---
 Answers are considered as a string of letters A–Z by changing lowercase letters to uppercase and stripping any other characters. Uses [scrypt-js](https://github.com/ricmoo/scrypt-js). [What is this?](/checker/about)
 
