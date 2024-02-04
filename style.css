@@ -7,41 +7,46 @@ body, html {
     background-color: #121212;
     color: #e0e0e0;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Ensure the main axis is vertical */
 }
 
-header, footer {
+header {
     text-align: center;
     padding: 20px;
+    padding-bottom: 30px; /* Increase padding to separate from main content */
 }
 
 header h1 {
     margin: 0;
     color: #ffffff;
+    font-size: 2em; /* Increase title size for emphasis */
 }
 
 header p {
-    margin: 10px 0 20px;
     color: #bbbbbb;
 }
 
 main {
     flex-grow: 1;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
+    flex-direction: column; /* Ensure content in main is organized vertically */
+    align-items: center; /* Center-align the children horizontally */
+    justify-content: flex-start; /* Align children to the start vertically */
     padding: 20px;
+    width: 100%; /* Ensure main takes full width */
 }
 
-.input-area {
+.input-area, .url-display {
     width: 100%;
-    max-width: 600px;
+    max-width: 600px; /* Max width for better appearance on larger screens */
+    display: flex;
+    flex-direction: column; /* Organize inputs and URL display in a column */
+    align-items: center; /* Center-align horizontally */
     margin-bottom: 20px;
 }
 
 .inputPair input, #generatedURL {
-    width: calc(50% - 10px);
+    width: calc(50% - 12px); /* Adjust width calculation for proper spacing */
     padding: 10px;
     margin: 5px;
     border-radius: 5px;
@@ -61,35 +66,9 @@ button {
     transition: background-color 0.3s ease;
 }
 
-#addPair {
-    background-color: #4CAF50;
-}
-
-#generateURL {
-    background-color: #2196F3;
-}
-
-#copyURL {
-    background-color: #f44336;
-}
-
-button:hover {
-    opacity: 0.8;
-}
-
-.url-display {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.hidden {
-    display: none;
-}
-
 footer {
-    padding: 10px;
+    padding: 20px;
     background-color: #1e1e1e;
     color: #bbbbbb;
+    text-align: center;
 }
